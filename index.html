@@ -8,7 +8,6 @@
   
   <title>Frontend Mentor | NFT preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     @import url(https://fonts.google.com/specimen/Outfit);
     body {
@@ -38,6 +37,42 @@
       align-items: center;
     }
     
+    .view {
+    width: 100%;
+    height:300px;
+    margin-top: 20px;
+    border-radius: 10px;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    }
+
+    .eye {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .top-half:hover .view {
+      opacity: 0.3;
+    }
+
+    .top-half:hover .eye {
+      opacity: 1;
+    
+    }
+
+    .top-half:hover {
+      background-color: hsl(178, 100%, 50%);
+      border-radius: 10px;
+    }
+
     ul {
       list-style: none;
       display: flex;
@@ -47,7 +82,100 @@
 
     .view:hover {
       background-color: hsl(178, 100%, 50%);
-      opacity: 0.5;
+      opacity: 1;
+    }
+
+    h1:hover {
+      color: hsl(178, 100%, 50%);
+    }
+
+    h3:hover {
+      color: hsl(178, 100%, 50%);
+    }
+
+    @media only screen and (max-width: 375px) {
+      body {
+      min-width: 50vh;
+      display: grid;
+      justify-items: center;
+      font-size: 18px;
+      background-color: hsl(217, 54%, 11%);
+      font-family: 'outfit', sans-serif;
+    }
+
+    div {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    main {
+      background-color: hsl(216, 50%, 16%);
+      height: 600px;
+      width: 340px;
+      margin-top: 50px;
+      border-radius: 15px;
+      
+    }
+
+    .container {
+      align-items: center;
+    }
+    
+    .view {
+    width: 100%;
+    height:300px;
+    margin-top: 20px;
+    border-radius: 10px;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    }
+
+    .eye {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .top-half:hover .view {
+      opacity: 0.3;
+    }
+
+    .top-half:hover .eye {
+      opacity: 1;
+    
+    }
+
+    .top-half:hover {
+      background-color: hsl(178, 100%, 50%);
+      border-radius: 10px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      float: left;
+      padding-left: 10px;
+    }
+
+    .view:hover {
+      background-color: hsl(178, 100%, 50%);
+      opacity: 1;
+    }
+
+    h1:hover {
+      color: hsl(178, 100%, 50%);
+    }
+
+    h3:hover {
+      color: hsl(178, 100%, 50%);
+    }
     }
 
     .attribution { font-size: 11px; text-align: center; }
@@ -57,10 +185,10 @@
 <body>
 <main>
   <div class="container">
-  <div><img src="images/image-equilibrium.jpg" alt="" style="width: 300px;
-    height:300px;
-    margin-top: 20px;
-    border-radius: 10px;" class="view"></div>
+  <div class="top-half">
+  <img src="images/image-equilibrium.jpg" alt="" class="view">
+  <img src="images/icon-view.svg" alt="" class="eye">  
+  </div>
   <div><h1 style="color: hsl(0, 0%, 100%); font-size: 18px;">Equilibrium #3429</h1>
   
 <p style="color: hsl(215, 51%, 70%);"> 
